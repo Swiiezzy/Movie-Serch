@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+
+}
+
+/* +++++++++++++++
+xx Header image xx
++++++++++++++++ */
+
+.header--div {
+    display: block;
+    max-width: 1000px;
+    min-width: 400px;
+    margin-left: auto;
+   
+}
+
+.header--img {
+    max-width: 100%;
+    display: block;
+}
