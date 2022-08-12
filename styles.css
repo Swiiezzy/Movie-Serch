@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: black;
-
+    
 }
 
 /* +++++++++++++++
@@ -10,14 +10,28 @@ xx Header image xx
 +++++++++++++++ */
 
 .header--div {
-    display: block;
     max-width: 1000px;
     min-width: 400px;
-    margin-left: auto;
-   
+    margin: 0 auto;
+    border:2px solid white;
 }
 
 .header--img {
+    margin: 0 auto;
+    max-height: 500px;
     max-width: 100%;
     display: block;
+    border-radius: 20%;
+    border: 2px solid gray;
+}
+
+
+
+/* +++++++++++++++
+xx Serch Section xx
++++++++++++++++ */
+
+.serch--div{
+    display:flex;
+    justify-content: center;
 }
