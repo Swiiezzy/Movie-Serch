@@ -17,11 +17,11 @@ serchBtn.addEventListener("click", () => {
             serchValue.value = ""
             movieDisplay.innerHTML = `<p>Jakiś tekst</p>`
             const serchPool = data.Search.map(movie=>movie.imdbID)
-            console.log(serchPool[0])
-            const serchPoolFetch = serchPool.map(id=>
-              
-                fetch(`http://www.omdbapi.com/?i=${id}&plot=full&apikey=${key}`))
-            console.log(serchPoolFetch[0].Title)
+     const serchPoolFetch = serchPool.map(id=>
+            
+        fetch(`http://www.omdbapi.com/?i=${id}&plot=full&apikey=${key}`))
+        console.log(serchPoolFetch[0].Title)
+
         })
 })
 
