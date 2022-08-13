@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: black;
+    /* background-color: black; */
 
 }
 
@@ -33,19 +33,20 @@ xx Serch Section xx
 +++++++++++++++ */
 
 .serch--div {
-    display: flex;
-    justify-content: center;
     margin: 1rem auto;
     margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-content:center;
+
 }
 
 .border {
-    margin-left: 5rem;
-    margin-right: 5rem;
-    max-width: 1000px;
+    max-width: 800px;
     min-width: 300px;
     border-bottom: 3px solid gray;
     padding-bottom: 5rem;
+
 }
 
 #form--serch {
@@ -70,4 +71,11 @@ xx Serch Section xx
     color: gold;
     border-radius: 30px;
 
+}
+
+/* xxxxxxxxxxxxxx
+Display result
+xxxxxxxxxxxxxx */
+.movie--display{
+    color:black
 }
