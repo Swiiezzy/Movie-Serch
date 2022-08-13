@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: black;
+    background-color: black
 
 }
 
@@ -77,5 +77,27 @@ xx Serch Section xx
 Display result
 xxxxxxxxxxxxxx */
 .movie--display{
-    color:black
+    color:whitesmoke
+}
+
+.movie--display--one{
+    display: flex;
+    max-width: 1000px;
+    min-width: 400px;
+    margin: 2rem 5rem;
+
+
+}
+
+.movie--display--one h2{
+    font-size: 2rem;
+    margin-top: 0;
+}
+.movie--display--one--infofolder{
+   margin-left: 1rem;
+    border-radius: 5%;
+}
+.movie--display--one--infofolder .flex{
+    display: flex;
+    justify-content: space-between;
 }
