@@ -9,6 +9,12 @@ const serchBtn = document.getElementById("form--btn")
 // Connect Api and take serched data object
 // +++++++++++++++++++++++++++++++++++++++
 
+function addToWatchlist(a){
+    console.log(a)
+
+}
+
+
 serchBtn.addEventListener("click", () => {
     fetch(`https://www.omdbapi.com/?s=${serchValue.value}&apikey=${key}&plot=full`)
         .then(res => res.json())
@@ -47,7 +53,7 @@ serchBtn.addEventListener("click", () => {
                             <div class="movie--display--one--infofolder">
                                 <div class="flex">
                                  <h2>${Movieinfo.Title}</h2>
-                                  <button class="btn"></button>
+                                  <button class="btn" id="${Movieinfo.id}" onclick="addToWatchlist(this.id)"></button>
                                 </div>
                                 <p>Language:${Movieinfo.Language}</p>
                                 <p>Released :${Movieinfo.Released}</p>
