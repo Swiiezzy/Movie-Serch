@@ -32,7 +32,7 @@ serchBtn.addEventListener("click", () => {
                 fetch(`http://www.omdbapi.com/?i=${data.idSerched[i]}&plot=full&apikey=${key}`).then(res => res.json())
                     .then(data => {
 
-
+console.log(data.Ratings[0].Value)
                         // creat obj with usefull data from api
                         const Movieinfo = {
                             Title: data.Title,
@@ -42,17 +42,19 @@ serchBtn.addEventListener("click", () => {
                             Language: data.Language,
                             id: data.imdbID,
                             image: data.Poster,
-                            Plot: data.Plot
+                            Plot: data.Plot,
+                            Ratings:data.Ratings[0].Value
                         }
                               // render Movie
                         movieDisplay.innerHTML += `
                         <div class="movie--display--one">
                             <div class="img">
-                             <img src="${Movieinfo.image}">
+                             <img alt ="${Movieinfo.Title}"src="${Movieinfo.image}">
                             </div>
                             <div class="movie--display--one--infofolder">
                                 <div class="flex">
                                  <h2>${Movieinfo.Title}</h2>
+                                 <p>Ratings :${Movieinfo.Ratings}</p>
                                   <button class="btn" id="${Movieinfo.id}" onclick="addToWatchlist(this.id)"></button>
                                 </div>
                                 <p>Language:${Movieinfo.Language}</p>
