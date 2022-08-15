@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <TITLE></TITLE>
+    <TITLE>Movie-Serch</TITLE>
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
@@ -11,17 +11,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
         integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
-        <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="center">
-    <a href="index.html">Movie-Serch</a>
-</div>
-    <section class="movie--display" id="movie--display">
-    
+    <header>
+        <div class="header--div">
+            <img class="header--img" src="./Photo/Main.jpg">
+        </div>
+    </header>
+    <section class="serch--div border">
+        <a href="FavoriteList.html">Favorite</a>
+        <input id="form--serch" type="text" placeholder="Search for a movie">
+        <button class="form--btn" id="form--btn">SEARCH</button>
     </section>
-    <script src="Favorite.js" type="text/babel"></script>
+    <section class="movie--display" id="movie--display">
+        
+    </section>
+    <script src="main.js" type="text/babel"></script>
 </body>
 
 </html>
