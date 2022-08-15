@@ -1,5 +1,6 @@
 const key = "cef19669"  //Api Need this key 
-
+var favorite = localStorage.getItem("favorite") == null ? [] : JSON.parse(localStorage.getItem("favorite"))
+console.log(favorite)
 
 const movieDisplay = document.getElementById("movie--display")
 const serchValue = document.getElementById("form--serch")
@@ -8,13 +9,47 @@ const serchBtn = document.getElementById("form--btn")
 // +++++++++++++++++++++++++++++++++++++++
 // Connect Api and take serched data object
 // +++++++++++++++++++++++++++++++++++++++
+var color = false
+function addToWatchlist(id) {
+    console.log(JSON.stringify(favorite))
+    document.getElementById(id).style.backgroundColor = "green"
+    console.log(favorite.indexOf(id))
+    if (favorite.indexOf(id) != -1) {
+        document.getElementById(id).style.backgroundColor = "red"
+        favorite.splice(favorite.indexOf(id), 1)
+    }
+    else { favorite.push(id) }
 
-function addToWatchlist(a){
-    console.log(a)
+    localStorage.setItem('favorite', JSON.stringify(favorite));
+
+
+
+
+
+
+
+    // console.log(document.getElementById(id).parentNode.parentNode.parentNode.childNodes[1].childNodes[1].src)   
+
+
+    // console.log(document.getElementById(id).parentNode.parentNode.childNodes[1].textContent)
+
+    // console.log(document.getElementById(id).parentNode.parentNode.childNodes[3].textContent)
+
+    // console.log(document.getElementById(id).parentNode.parentNode.childNodes[5].textContent)
+
+    // console.log(document.getElementById(id).parentNode.parentNode.childNodes[7].textContent)
+
+    // console.log(document.getElementById(id).parentNode.parentNode.childNodes[9].textContent)
+    // favorite.push([id,])
+
 
 }
 
+function query() {
+    console.log(document.querySelectorAll(".btn"))
 
+
+}
 serchBtn.addEventListener("click", () => {
     fetch(`https://www.omdbapi.com/?s=${serchValue.value}&apikey=${key}&plot=full`)
         .then(res => res.json())
@@ -32,7 +67,7 @@ serchBtn.addEventListener("click", () => {
                 fetch(`http://www.omdbapi.com/?i=${data.idSerched[i]}&plot=full&apikey=${key}`).then(res => res.json())
                     .then(data => {
 
-console.log(data.Ratings[0].Value)
+
                         // creat obj with usefull data from api
                         const Movieinfo = {
                             Title: data.Title,
@@ -43,9 +78,15 @@ console.log(data.Ratings[0].Value)
                             id: data.imdbID,
                             image: data.Poster,
                             Plot: data.Plot,
-                            Ratings:data.Ratings[0].Value
+                            Ratings: data.Ratings[0].Value
                         }
-                              // render Movie
+
+                        // check if movie is fevorit list if yest backgrund green if not red
+                        const color = favorite.indexOf(Movieinfo.id) != -1 ? "green" : "red"
+
+
+                        // render Movie
+
                         movieDisplay.innerHTML += `
                         <div class="movie--display--one">
                             <div class="img">
@@ -55,7 +96,7 @@ console.log(data.Ratings[0].Value)
                                 <div class="flex">
                                  <h2>${Movieinfo.Title}</h2>
                                  <p>Ratings :${Movieinfo.Ratings}</p>
-                                  <button class="btn" id="${Movieinfo.id}" onclick="addToWatchlist(this.id)"></button>
+                                  <button style="background-color:${color};" class="btn" id="${Movieinfo.id}" onclick="addToWatchlist(this.id)"></button>
                                 </div>
                                 <p>Language:${Movieinfo.Language}</p>
                                 <p>Released :${Movieinfo.Released}</p>
@@ -64,12 +105,13 @@ console.log(data.Ratings[0].Value)
                             </div>
                         </div>
                         `
+
                     })
+
             }
         }).then(
-            console.log(document.querySelector('btn'))
-            
-        )
+
+    )
 })
 
 
