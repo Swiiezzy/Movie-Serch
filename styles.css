@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: black;
+    background-color: #1c1c1c;
     line-height: 1.6;
 }
 
@@ -22,8 +22,10 @@ xx Header image xx
     max-height: 400px;
     max-width: 100%;
     display: block;
-    border-radius: 20%;
+   
     border: 2px solid gray;
+    border-radius: 10%;
+    
 }
 
 
@@ -31,17 +33,18 @@ xx Header image xx
 /* +++++++++++++++
 xx Serch Section xx
 +++++++++++++++ */
-a{
-    letter-spacing:5px;
-    color:gold;
+a {
+    
+    letter-spacing: 5px;
+    color: gold;
     font-size: 1.5rem;
-    margin-right:20px;
+    margin-right: 20px;
     text-decoration: none;
-    transition:500ms;
+    transition: 500ms;
 }
 
-a:hover{
-    transition:500ms;
+a:hover {
+    transition: 500ms;
     letter-spacing: 1.4rem;
 }
 
@@ -51,7 +54,7 @@ a:hover{
     margin-top: 2rem;
     display: flex;
     justify-content: center;
-    align-content:center;
+    align-content: center;
 
 }
 
@@ -73,19 +76,20 @@ a:hover{
 
 
 .form--btn {
-    text-transform : capitalize;
+    text-transform: capitalize;
     font-size: 1rem;
     padding: 15px 20px;
     border-radius: 20px;
     background-color: gray;
     color: white;
     margin-left: 1rem;
-    transition:500ms;
+    transition: 500ms;
     text-shadow: 3px 2px 4px #ebe705;
+    cursor: pointer;
 }
 
 .form--btn:hover {
-    transition:500ms;
+    transition: 500ms;
     color: gold;
     border-radius: 30px;
 
@@ -94,30 +98,67 @@ a:hover{
 /* xxxxxxxxxxxxxx
 Display result
 xxxxxxxxxxxxxx */
-.movie--display{
-    color:whitesmoke;
-    transition:500ms;
+
+.movie--display {
+ 
+    color: whitesmoke;
+    transition: 500ms;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  
 }
 
-.movie--display--one{
+.movie--display--one {
     display: flex;
     max-width: 1000px;
     min-width: 400px;
-    margin: 2rem 5rem;
+    margin: 2rem auto;
 
 
 }
 
-.movie--display--one h2{
+.movie--display--one h2 {
     font-size: 2rem;
     margin-top: 0;
 }
-.movie--display--one--infofolder{
-   margin-left: 1rem;
+
+.movie--display--one--infofolder {
+    margin-left: 1rem;
     border-radius: 5%;
 }
-.movie--display--one--infofolder .flex{
+
+.movie--display--one--infofolder .flex {
     display: flex;
     justify-content: space-between;
 }
 
+.movie--display--one--infofolder--info--flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 20px;
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    background-color: red;
+    border-radius: 50%;
+    border:2px dotted black;
+    transition: 200ms;
+  
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    border :2px gold solid;
+   border-image: linear-gradient(to left, red, gold) 1;
+
+}

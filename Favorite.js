@@ -57,11 +57,13 @@ console.log(data)
                                          <h2>${Movieinfo.Title}</h2>
                                          <p>Ratings :${Movieinfo.Ratings}</p>
                                           <button style="background-color:${color};" class="btn" id="${Movieinfo.id}" onclick="addToWatchlist(this.id)"></button>
-                                        </div>
+                                        </div class="movie--display--one--infofolder--info--flex">
+                                        <div>
                                         <p>Language:${Movieinfo.Language}</p>
                                         <p>Released :${Movieinfo.Released}</p>
                                         <p>Actors :${Movieinfo.Actors}</p>
                                         <p>Plot :${Movieinfo.Plot}</p>
+                                        </div>
                                     </div>
                                 </div>
                                 `
