@@ -3,7 +3,7 @@ const movieDisplay = document.getElementById("movie--display")
 const key = "cef19669"  //Api Need this key 
 var favorite = localStorage.getItem("favorite") == null ? [] : JSON.parse(localStorage.getItem("favorite"))
 
-console.log(favorite)
+
 function addToWatchlist(id) {
     console.log(JSON.stringify(favorite))
     document.getElementById(id).style.backgroundColor = "green"
@@ -18,37 +18,37 @@ function addToWatchlist(id) {
     render()
 }
 
+console.log(localStorage.getItem("favorite") == null)
 
 
 
+function render() {
+    movieDisplay.innerHTML = favorite.length == 0 ? `<h2 class="empty">LIST IS EMPTY :(</h2>` : ""
+    for (let i = 0; i < favorite.length; i++) {
+        fetch(`http://www.omdbapi.com/?i=${favorite[i]}&plot=full&apikey=${key}`).then(res => res.json())
+            .then(data => {
+                console.log(data)
 
-function render(){
-    movieDisplay.innerHTML=""
-for (let i = 0; i < favorite.length; i++) {
-    fetch(`http://www.omdbapi.com/?i=${favorite[i]}&plot=full&apikey=${key}`).then(res => res.json())
-        .then(data => {
-console.log(data)
-
-            // creat obj with usefull data from api
-            const Movieinfo = {
-                Title: data.Title,
-                Released: data.Released,
-                Actors: data.Actors,
-                Country: data.Country,
-                Language: data.Language,
-                id: data.imdbID,
-                image: data.Poster,
-                Plot: data.Plot,
-                Ratings: data.Ratings[0].Value
-            }
-                                // check if movie is fevorit list if yest backgrund green if not red
-                                const color = favorite.indexOf(Movieinfo.id) != -1 ? "green" : "red"
+                // creat obj with usefull data from api
+                const Movieinfo = {
+                    Title: data.Title,
+                    Released: data.Released,
+                    Actors: data.Actors,
+                    Country: data.Country,
+                    Language: data.Language,
+                    id: data.imdbID,
+                    image: data.Poster,
+                    Plot: data.Plot,
+                    Ratings: data.Ratings[0].Value
+                }
+                // check if movie is fevorit list if yest backgrund green if not red
+                const color = favorite.indexOf(Movieinfo.id) != -1 ? "green" : "red"
 
 
-                                // render Movie
-                             
-                                movieDisplay.innerHTML += `
-                                <div class="movie--display--one">
+                // render Movie
+
+                movieDisplay.innerHTML += `
+                <div class="movie--display--one border">
                                     <div class="img">
                                      <img alt ="${Movieinfo.Title}"src="${Movieinfo.image}">
                                     </div>
@@ -67,15 +67,17 @@ console.log(data)
                                     </div>
                                 </div>
                                 `
-        
-        
-        
-        
-        
-        })}}
 
 
 
-        render()
+
+
+            })
+    }
+}
+
+
+
+render()
 
 

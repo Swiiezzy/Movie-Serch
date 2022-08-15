@@ -79,7 +79,7 @@ serchBtn.addEventListener("click", () => {
                         // render Movie
 
                         movieDisplay.innerHTML += `
-                        <div class="movie--display--one">
+                        <div class="movie--display--one border">
                             <div class="img">
                              <img alt ="${Movieinfo.Title}"src="${Movieinfo.image}">
                             </div>

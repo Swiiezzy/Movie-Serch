@@ -22,10 +22,10 @@ xx Header image xx
     max-height: 400px;
     max-width: 100%;
     display: block;
-   
+
     border: 2px solid gray;
     border-radius: 10%;
-    
+
 }
 
 
@@ -34,7 +34,7 @@ xx Header image xx
 xx Serch Section xx
 +++++++++++++++ */
 a {
-    
+
     letter-spacing: 5px;
     color: gold;
     font-size: 1.5rem;
@@ -62,59 +62,74 @@ a:hover {
     max-width: 800px;
     min-width: 300px;
     border-bottom: 3px solid gray;
-    padding-bottom: 5rem;
+    padding-bottom: 2.5rem;
 
 }
 
+#form--serch:hover{
+    border: 5px inset #A49D1A;
+    border-radius: 0px 40px 0px 40px;
+    transition: 500ms;
+
+}
 #form--serch {
+    transition: 500ms;
     border-radius: 20px;
     text-align: center;
     font-size: 1.5rem;
     align-self: center;
+    border: 5px inset #A49D1A;
+    border-radius: 40px 0px 40px 0px;
 }
 
 
 
 .form--btn {
-    text-transform: capitalize;
     font-size: 1rem;
     padding: 15px 20px;
-    border-radius: 20px;
+
     background-color: gray;
     color: white;
     margin-left: 1rem;
     transition: 500ms;
-    text-shadow: 3px 2px 4px #ebe705;
+    text-shadow: 1px 1px 8px #0e0e0d;
     cursor: pointer;
+    border: 5px inset #A49D1A;
+    border-radius: 40px 0px 40px 0px;
 }
 
 .form--btn:hover {
+    border: 5px inset #A49D1A;
+    border-radius: 0px 40px 0px 40px;
     transition: 500ms;
     color: gold;
-    border-radius: 30px;
-
 }
 
 /* xxxxxxxxxxxxxx
 Display result
 xxxxxxxxxxxxxx */
+img {
+    border: 2px gold solid;
+    border-image: linear-gradient(to left, red, gold) 1;
+
+}
 
 .movie--display {
- 
+
     color: whitesmoke;
     transition: 500ms;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-  
+
 }
 
 .movie--display--one {
     display: flex;
-    max-width: 1000px;
+    max-width: 800px;
     min-width: 400px;
-    margin: 2rem auto;
+    margin: 1.5rem auto;
 
 
 }
@@ -147,18 +162,21 @@ xxxxxxxxxxxxxx */
     width: 13px;
     background-color: red;
     border-radius: 50%;
-    border:2px dotted black;
+    border: 2px dotted black;
     transition: 200ms;
-  
+
 }
 
-.center{
+.center {
     display: flex;
     justify-content: center;
 }
 
-img {
-    border :2px gold solid;
-   border-image: linear-gradient(to left, red, gold) 1;
-
+.empty {
+    margin-top: 30vh;
+    text-align: center;
+    justify-content: center;
 }
+
+
+
