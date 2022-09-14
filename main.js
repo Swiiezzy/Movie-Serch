@@ -22,18 +22,7 @@ function addToWatchlist(id) {
 
     localStorage.setItem('favorite', JSON.stringify(favorite));
 
-    // console.log(document.getElementById(id).parentNode.parentNode.parentNode.childNodes[1].childNodes[1].src)   
 
-    // console.log(document.getElementById(id).parentNode.parentNode.childNodes[1].textContent)
-
-    // console.log(document.getElementById(id).parentNode.parentNode.childNodes[3].textContent)
-
-    // console.log(document.getElementById(id).parentNode.parentNode.childNodes[5].textContent)
-
-    // console.log(document.getElementById(id).parentNode.parentNode.childNodes[7].textContent)
-
-    // console.log(document.getElementById(id).parentNode.parentNode.childNodes[9].textContent)
-    // favorite.push([id,])
 }
 
 function query() {
@@ -42,7 +31,7 @@ function query() {
 
 }
 serchBtn.addEventListener("click", () => {
-    fetch(`https://www.omdbapi.com/?s=${serchValue.value}&apikey=${key}&plot=full`)
+    fetch(`http://www.omdbapi.com/?s=${serchValue.value}&apikey=${key}&plot=full`)
         .then(res => res.json())
         .then(data => {
             movieDisplay.innerHTML = ""
