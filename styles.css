@@ -40,12 +40,13 @@ a {
     font-size: 1.5rem;
     margin-right: 20px;
     text-decoration: none;
+  
     transition: 500ms;
 }
 
 a:hover {
-    transition: 500ms;
-    letter-spacing: 1.4rem;
+    color:#ec660c;
+    letter-spacing: 8px
 }
 
 
@@ -66,12 +67,13 @@ a:hover {
 
 }
 
-#form--serch:hover{
+#form--serch:hover {
     border: 5px inset #A49D1A;
     border-radius: 0px 40px 0px 40px;
     transition: 500ms;
 
 }
+
 #form--serch {
     transition: 500ms;
     border-radius: 20px;
@@ -115,13 +117,11 @@ img {
 }
 
 .movie--display {
-
     color: whitesmoke;
     transition: 500ms;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
+    flex-wrap: wrap;
+    margin: 0 2rem
 
 }
 
@@ -129,7 +129,7 @@ img {
     display: flex;
     max-width: 800px;
     min-width: 400px;
-    margin: 1.5rem auto;
+    margin: 1.5rem;
 
 
 }
@@ -177,6 +177,3 @@ img {
     text-align: center;
     justify-content: center;
 }
-
-
-

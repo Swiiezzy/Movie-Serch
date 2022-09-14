@@ -75,7 +75,7 @@ serchBtn.addEventListener("click", () => {
                             <div class="movie--display--one--infofolder">
                                 <div class="flex">
                                  <h2>${Movieinfo.Title}</h2>
-                                 <p>Ratings :${Movieinfo.Ratings}</p>
+                                 <p>${Movieinfo.Ratings}</p>
                                   <button style="background-color:${color};" class="btn btn2" id="${Movieinfo.id}" onclick="addToWatchlist(this.id)"></button>
                                 </div>
                                 <p>Language:${Movieinfo.Language}</p>
